@@ -6,7 +6,7 @@ export const useProductListModel = () => {
   const getProductList = async () => {
     try {
       const productsResponse = await fetch(
-        "https://fakestoreapi.com/products?limit=20"
+        `${process.env.REACT_APP_API_URL}/products?limit=20`
       );
       const products = await productsResponse.json();
       return dispatch(addProducts(products));
